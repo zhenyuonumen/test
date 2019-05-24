@@ -1,0 +1,34 @@
+def get_multiplicand(): #定义被乘数，必须输入数字
+    while True:
+        n=str(input('请输入被乘数：'))
+        if n.isdigit(): #判断是否为整数，不是整数继续输入
+            break
+        else:
+            print('输入有误，请输入一个整数')
+    return n
+def get_multiplier(): #定义被乘数，必须为数字
+    while True:
+        s=str(input('请输入乘数：'))
+        if s.isdigit():
+            break
+        else:
+            print('输入有误，请输入一个整数')
+    return s
+def print_verical(): #打印乘法竖式的函数
+    bc=get_multiplicand()
+    cs=get_multiplier()
+    resultline= ' '*(len(bc)+len(cs))
+    result=str(int(bc)*int(cs))
+    print ()
+    print (resultline[:-len(bc)]+bc)
+    print ('*'+resultline[:-len(cs)-1]+cs)
+    print ('-'*(len(bc)+len(cs)))
+    print (resultline[:-len(result)]+result)
+    return None
+
+    
+
+
+    
+print_verical()
+input()
